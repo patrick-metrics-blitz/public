@@ -1,0 +1,11 @@
+version: 2.1
+orbs:
+  compass: pbrady/compass@dev:test
+workflows:
+  my-workflow:
+    jobs:
+      - my-job:
+          context:
+            - compass-integration
+          post-steps:
+            - compass/notify_deployment
